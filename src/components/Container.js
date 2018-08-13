@@ -8,6 +8,7 @@ export default ({children}) => {
     </View>
   );
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
