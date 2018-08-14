@@ -1,6 +1,3 @@
-// should take title and render
-// should take date to countdown to
-
 import React from 'react';
 import { shallow } from 'enzyme';
 

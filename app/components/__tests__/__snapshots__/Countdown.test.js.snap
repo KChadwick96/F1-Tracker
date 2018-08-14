@@ -2,12 +2,24 @@
 
 exports[`renders correctly 1`] = `
 <Component
-  style={Object {}}
+  style={
+    Object {
+      "marginTop": 18,
+      "paddingHorizontal": 20,
+      "paddingVertical": 40,
+    }
+  }
 >
   <Text
     accessible={true}
     allowFontScaling={true}
     ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "white",
+        "fontSize": 22,
+      }
+    }
   >
     Next Race
   </Text>
@@ -15,6 +27,13 @@ exports[`renders correctly 1`] = `
     accessible={true}
     allowFontScaling={true}
     ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "white",
+        "fontSize": 32,
+        "fontWeight": "bold",
+      }
+    }
   >
     12D 5H 1M 10S
   </Text>

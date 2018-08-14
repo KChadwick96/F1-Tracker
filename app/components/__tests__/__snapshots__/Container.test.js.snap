@@ -4,11 +4,7 @@ exports[`renders its children 1`] = `
 <Component
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "yellow",
       "flex": 1,
-      "flexDirection": "column",
-      "justifyContent": "center",
     }
   }
 >
