@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableHighlight, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 
 const Card = ({children, name, title, description, actionText, onActionPress}) => {
@@ -10,9 +10,9 @@ const Card = ({children, name, title, description, actionText, onActionPress}) =
 
         let transformedActionText = actionText.toUpperCase();
         return (
-            <TouchableHighlight style={styles.button} onPress={onActionPress}>
+            <TouchableOpacity style={styles.button} onPress={onActionPress}>
                 <Text style={styles.buttonText}>{transformedActionText}</Text>
-            </TouchableHighlight>
+            </TouchableOpacity>
         );
     }
 
@@ -42,22 +42,31 @@ const styles = StyleSheet.create({
     container: {
         padding: 12,
         marginHorizontal: 10,
+        marginVertical: 10,
         borderRadius: 4,
         backgroundColor: 'white',
         shadowColor: '#7a7a7a',
         shadowRadius: 3,
-        shadowOpacity: 0.5
+        shadowOpacity: 0.5,
+        shadowOffset: {
+            width: 0,
+            height: 0
+        }
     },
     name: {
         color: 'black',
-        marginBottom: 15,
-        fontWeight: 'bold',
+        marginBottom: 12,
+        //fontWeight: 'bold',
         color: 'grey',
         fontSize: 15
     },
     title: {
         fontSize: 25,
-        fontWeight: '700'
+        fontWeight: '700',
+        marginBottom: 3
+    },
+    description: {
+        fontSize: 17
     },
     button: {
         marginTop: 15
