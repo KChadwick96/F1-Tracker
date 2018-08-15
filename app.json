@@ -1,4 +1,6 @@
 {
+  "name": "f1-tracker",
+  "displayName": "f1-tracker",
   "expo": {
     "sdkVersion": "27.0.0"
   }

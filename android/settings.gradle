@@ -1,0 +1,3 @@
+rootProject.name = 'f1-tracker'
+
+include ':app'
