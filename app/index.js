@@ -7,16 +7,26 @@ import Countdown from './components/Countdown';
 import Card from './components/Card';
 
 export default class App extends React.Component {
+
+    handleNextRacePress = () => {
+
+    }
+
     render() {
         return (
             <Container>
                 <StatusBar translucent={false} barStyle="light-content" />
-                <TopBackground height={200} />
+                <TopBackground height={185} />
                 <Countdown title="Next Race" countdownTo={new Date()} />
-                <Card title="Up Next">
-                    <Text>Belgium Grand Prix</Text>
+                <Card
+                    name="Up Next"
+                    title="Belgium Grand Prix"
+                    description="Something blah blah"
+                    actionText="Expand"
+                    onActionPress={() => this.handleNextRacePress()}>
+          
                 </Card>
             </Container>
         );
-  }
+    }
 }
