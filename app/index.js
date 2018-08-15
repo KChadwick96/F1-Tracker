@@ -1,5 +1,6 @@
 import React from 'react';
 import { StatusBar, Text } from 'react-native';
+import { AppLoading, Font } from 'expo';
 
 import Container from './components/Container';
 import TopBackground from './components/TopBackground';
@@ -7,6 +8,20 @@ import Countdown from './components/Countdown';
 import Card from './components/Card';
 
 export default class App extends React.Component {
+    
+    constructor(props) {
+        super(props);
+        this.state = { loading: true };
+    }
+
+    async componentWillMount() {
+        await Font.loadAsync({
+            'Raleway': require('./fonts/Raleway-Regular.ttf'),
+            'Raleway-Medium': require('./fonts/Raleway-Medium.ttf'),
+            'Raleway-Bold': require('./fonts/Raleway-Bold.ttf')
+        });
+        this.setState({ loading: false });
+    }
 
     handleNextRacePress = () => {
 
@@ -17,6 +32,8 @@ export default class App extends React.Component {
     }
 
     render() {
+        if (this.state.loading) return null;
+
         return (
             <Container>
                 <StatusBar translucent={false} barStyle="light-content" />

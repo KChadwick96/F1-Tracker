@@ -1,6 +1,8 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, TouchableOpacity, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
+
+import Text from './Text';
 
 const Card = ({children, name, title, description, actionText, onActionPress}) => {
     const renderActionButton = () => {
@@ -11,7 +13,7 @@ const Card = ({children, name, title, description, actionText, onActionPress}) =
         let transformedActionText = actionText.toUpperCase();
         return (
             <TouchableOpacity style={styles.button} onPress={onActionPress}>
-                <Text style={styles.buttonText}>{transformedActionText}</Text>
+                <Text.Bold style={styles.buttonText}>{transformedActionText}</Text.Bold>
             </TouchableOpacity>
         );
     }
@@ -20,9 +22,9 @@ const Card = ({children, name, title, description, actionText, onActionPress}) =
 
     return (
         <View style={styles.container} elevation={1}>
-            <Text style={styles.name}>{transformedName}</Text>
-            <Text style={styles.title}>{title}</Text>
-            <Text style={styles.description}>{description}</Text>
+            <Text.Medium style={styles.name}>{transformedName}</Text.Medium>
+            <Text.Medium style={styles.title}>{title}</Text.Medium>
+            <Text.Regular style={styles.description}>{description}</Text.Regular>>
             {children}
             {renderActionButton()}
         </View>
@@ -56,7 +58,6 @@ const styles = StyleSheet.create({
     name: {
         color: 'black',
         marginBottom: 12,
-        //fontWeight: 'bold',
         color: 'grey',
         fontSize: 15
     },
