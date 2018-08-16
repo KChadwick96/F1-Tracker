@@ -1,13 +1,15 @@
 import React from 'react';
-import { StatusBar, Text } from 'react-native';
-import { AppLoading, Font } from 'expo';
+import { View, Text, StatusBar } from 'react-native';
+import { Font } from 'expo';
+import { createBottomTabNavigator } from 'react-navigation';
+import FontAwesome from 'react-native-vector-icons/FontAwesome5';
 
 import Container from './components/Container';
 import TopBackground from './components/TopBackground';
 import Countdown from './components/Countdown';
 import Card from './components/Card';
 
-export default class App extends React.Component {
+class Home extends React.Component {
     
     constructor(props) {
         super(props);
@@ -57,3 +59,20 @@ export default class App extends React.Component {
         );
     }
 }
+
+export default createBottomTabNavigator({
+    Home,
+    Season: () => {
+        return <View>
+            <Text>Season</Text>
+        </View>
+    }
+}, {
+    navigationOptions: {
+
+    },
+    tabBarOptions: {
+        activeTintColor: 'yellow',
+        inactiveTintColor: 'gray',
+    }
+});
