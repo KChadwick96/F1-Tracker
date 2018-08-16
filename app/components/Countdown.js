@@ -34,11 +34,11 @@ const styles = StyleSheet.create({
     marginTop: Platform.OS === 'ios' ? 25 : 0
   },
   title: {
-    fontSize: 22,
+    fontSize: 20,
     color: 'white'
   },
   countdown: {
-    fontSize: 32,
+    fontSize: 30,
     fontWeight: 'bold',
     color: 'white'
   }

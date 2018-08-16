@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StatusBar } from 'react-native';
 import { Font } from 'expo';
 import { createBottomTabNavigator } from 'react-navigation';
-import FontAwesome from 'react-native-vector-icons/FontAwesome5';
+import { Ionicons } from '@expo/vector-icons';
 
 import Container from './components/Container';
 import TopBackground from './components/TopBackground';
@@ -62,17 +62,32 @@ class Home extends React.Component {
 
 export default createBottomTabNavigator({
     Home,
-    Season: () => {
-        return <View>
-            <Text>Season</Text>
-        </View>
-    }
+    Season: () => <View><Text>Season</Text></View>,
+    Standings: () => <View><Text>Standings</Text></View>
 }, {
-    navigationOptions: {
+    navigationOptions: ({ navigation}) => ({
+        tabBarIcon: ({ tintColor }) => {
+            const { routeName } = navigation.state;
+            let iconName;
+            if (routeName === 'Home') {
+                iconName = "home";
+            } else if (routeName === 'Season') {
+                iconName = "calendar";
+            } else if (routeName === 'Standings') {
+                iconName = "grid";
+            }
 
-    },
+            return <Ionicons name={`ios-${iconName}`} size={25} color={tintColor} />
+        }
+    }),
     tabBarOptions: {
-        activeTintColor: 'yellow',
+        activeTintColor: 'red',
         inactiveTintColor: 'gray',
-    }
+        style: {
+            backgroundColor: 'white'
+        }
+    },
+    /* tabBarComponent: props => <View>
+        <Text>Tab bar</Text>
+    </View> */
 });

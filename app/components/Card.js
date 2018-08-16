@@ -59,15 +59,15 @@ const styles = StyleSheet.create({
         color: 'black',
         marginBottom: 12,
         color: 'grey',
-        fontSize: 15
+        fontSize: 13
     },
     title: {
-        fontSize: 25,
+        fontSize: 23,
         fontWeight: '700',
         marginBottom: 3
     },
     description: {
-        fontSize: 17
+        fontSize: 15
     },
     button: {
         marginTop: 15
