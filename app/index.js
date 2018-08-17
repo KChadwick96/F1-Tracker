@@ -8,6 +8,7 @@ import Container from './components/Container';
 import TopBackground from './components/TopBackground';
 import Countdown from './components/Countdown';
 import Card from './components/Card';
+import StandingsBar from './components/StandingsBar';
 
 class Home extends React.Component {
     
@@ -33,6 +34,10 @@ class Home extends React.Component {
 
     }
 
+    handleStandingsPress = () => {
+
+    }
+
     render() {
         if (this.state.loading) return null;
 
@@ -55,6 +60,26 @@ class Home extends React.Component {
                     actionText="Expand"
                     onActionPress={() => this.handleLastRacePress()}
                 />
+                <Card
+                    name="Last Race"
+                    actionText="View Standings"
+                    onActionPress={() => this.handleStandingsPress()}
+                >
+                    <StandingsBar 
+                        width={250}
+                        backgroundColor="red"
+                        color="white"
+                        points={100}
+                        name="Lewis Hamilton"
+                    />
+                    <StandingsBar 
+                        width={200}
+                        backgroundColor="red"
+                        color="white"
+                        points={100}
+                        name="Lewis Hamilton"
+                    />
+                </Card>
             </Container>
         );
     }
@@ -86,8 +111,5 @@ export default createBottomTabNavigator({
         style: {
             backgroundColor: 'white'
         }
-    },
-    /* tabBarComponent: props => <View>
-        <Text>Tab bar</Text>
-    </View> */
+    }
 });

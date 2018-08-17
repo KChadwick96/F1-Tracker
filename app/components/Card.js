@@ -34,7 +34,7 @@ const Card = ({children, name, title, description, actionText, onActionPress}) =
 Card.propTypes = {
     children: PropTypes.any,
     name: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
     description: PropTypes.string,
     actionText: PropTypes.string,
     onActionPress: PropTypes.func
