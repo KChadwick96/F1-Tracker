@@ -30,8 +30,8 @@ export default Countdown;
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 20,
-    paddingVertical: 20,
-    marginTop: Platform.OS === 'ios' ? 25 : 0
+    paddingVertical: 15,
+    marginTop: 25, // Platform.OS === 'ios' ? 25 : 25
   },
   title: {
     fontSize: 20,

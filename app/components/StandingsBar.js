@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
         borderTopRightRadius: 4,
         borderBottomRightRadius: 4,
         paddingHorizontal: 5,
+        marginVertical: 3,
         flexDirection: 'row'
     },
     text: {

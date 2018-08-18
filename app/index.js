@@ -44,7 +44,7 @@ class Home extends React.Component {
         return (
             <Container>
                 <StatusBar translucent={false} barStyle="light-content" />
-                <TopBackground height={220} />
+                <TopBackground height={210} />
                 <Countdown title="Next Race" countdownTo={new Date()} />
                 <Card
                     name="Up Next"

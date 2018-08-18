@@ -18,17 +18,33 @@ const Card = ({children, name, title, description, actionText, onActionPress}) =
         );
     }
 
+    const renderTitle = () => {
+        if (!title) {
+            return null;
+        }
+
+        return <Text.Medium style={styles.title}>{title}</Text.Medium>;
+    }
+
+    const renderDescription = () => {
+        if (!description) {
+            return null;
+        }
+
+        return <Text.Regular style={styles.description}>{description}</Text.Regular>;
+    }
+
     const transformedName = name.toUpperCase();
 
     return (
         <View style={styles.container} elevation={1}>
             <Text.Medium style={styles.name}>{transformedName}</Text.Medium>
-            <Text.Medium style={styles.title}>{title}</Text.Medium>
-            <Text.Regular style={styles.description}>{description}</Text.Regular>>
+            {renderTitle()}
+            {renderDescription()}
             {children}
             {renderActionButton()}
         </View>
-    )
+    );
 }
 
 Card.propTypes = {
@@ -42,7 +58,7 @@ Card.propTypes = {
 
 const styles = StyleSheet.create({
     container: {
-        padding: 12,
+        paddingVertical: 12,
         marginHorizontal: 10,
         marginVertical: 10,
         borderRadius: 4,
@@ -58,16 +74,19 @@ const styles = StyleSheet.create({
     name: {
         color: 'black',
         marginBottom: 12,
+        marginLeft: 12,
         color: 'grey',
         fontSize: 13
     },
     title: {
         fontSize: 23,
         fontWeight: '700',
-        marginBottom: 3
+        marginBottom: 3,
+        marginLeft: 12
     },
     description: {
-        fontSize: 15
+        fontSize: 15,
+        marginLeft: 12
     },
     button: {
         marginTop: 15
