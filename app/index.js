@@ -1,12 +1,28 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { createBottomTabNavigator } from 'react-navigation';
+import { createBottomTabNavigator, createStackNavigator } from 'react-navigation';
 import { Ionicons } from '@expo/vector-icons';
 
 import Home from './screens/Home';
+import Race from './screens/Race';
+
+const homeStack = createStackNavigator({
+    Home: {
+        screen: Home,
+        navigationOptions: {
+            header: () => null
+        }
+    },
+    Race: {
+        screen: Race,
+        navigationOptions: {
+            headerTitle: 'Race'
+        }
+    },
+})
 
 export default createBottomTabNavigator({
-    Home,
+    Home: homeStack,
     Season: () => <View><Text>Season</Text></View>,
     Standings: () => <View><Text>Standings</Text></View>
 }, {

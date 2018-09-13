@@ -82,9 +82,11 @@ class Home extends React.Component {
             </Container>
         );
     }
-}
+};
 
-export default createStackNavigator({
+export default Home;
+
+/* export default createStackNavigator({
     Home: {
         screen: Home,
         navigationOptions: {
@@ -94,4 +96,4 @@ export default createStackNavigator({
     Race: {
         screen: () => <View><Text>Race</Text></View>
     }
-})
+}) */
